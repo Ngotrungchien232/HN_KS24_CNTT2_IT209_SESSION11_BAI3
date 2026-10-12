@@ -84,9 +84,13 @@ jobs:
 
 Chi tiết xem tại tệp [report.md](./report.md) (và bản sao tại [homework/session_11/ex3/report.md](./homework/session_11/ex3/report.md)):
 
-| Bước thực thi (Step) | Lần Push 1 (Chưa Cache) | Lần Push 2 (Đã Cache) | Chênh lệch |
+- **Lần Push 1 (Run #1 - Chưa có Cache):** [Actions Run #38224713813](https://github.com/Ngotrungchien232/HN_KS24_CNTT2_IT209_SESSION11_BAI3/actions/runs/38224713813)
+- **Lần Push 2 (Run #2 - Đã có Cache):** [Actions Run #38224885343](https://github.com/Ngotrungchien232/HN_KS24_CNTT2_IT209_SESSION11_BAI3/actions/runs/38224885343)
+
+| Bước thực thi (Step) | Lần Push 1 (Run #1 - Chưa Cache) | Lần Push 2 (Run #2 - Đã Cache) | Chênh lệch |
 | :--- | :---: | :---: | :--- |
-| **Set up Java JDK 17** | ~3s *(Cache not found)* | ~6s *(Cache restored)* | Khôi phục cache thành công từ khóa `setup-java-Linux-gradle-...` |
-| **Run unit tests (`./gradlew test`)** | **1m 58s (118s)** | **9s** | **Giảm 1m 49s (~92.4%)** |
-| **Build project (`./gradlew build -x test`)** | **~12s** | **~5s** | **Giảm ~7s (~58.3%)** |
-| **Tổng thời gian toàn bộ Job** | **~2m 24s (144s)** | **~24s** | **Giảm ~2m 00s (~83.3%)** |
+| **Set up Java JDK 17** | **1s** *(Cache not found)* | **2s** *(Cache restored)* | Khôi phục cache thành công từ khóa `setup-java-Linux-gradle-...` |
+| **Run unit tests (`./gradlew test`)** | **33s** | **19s** | **Giảm 14s (Nhanh hơn ~42.4%)** |
+| **Build project (`./gradlew build -x test`)** | **2s** | **1s** | **Giảm 1s (Nhanh hơn 50%)** |
+| **Post Set up Java JDK 17 (Lưu Cache)** | **4s** | **0s** | **Giảm 4s** |
+| **Tổng thời gian toàn bộ Job** | **43s** | **26s** | **Giảm 17s (Nhanh hơn ~39.5%)** |
